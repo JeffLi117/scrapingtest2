@@ -13,9 +13,9 @@ axios(url)
         const $ = cheerio.load(html)
         const recipes = []
 
-        $('.comp mntl-card-list-items mntl-document-card mntl-card card card--no-image', html).each(function() {
-            const title = $(this).find('span.card__title-text ').text()
-            const url = $(this).find('a').attr('href')
+        $('[id^="mntl-card-list-items_"]', html).each(function() {
+            const title = $(this).find('.card__title-text ').text()
+            const url = $(this).attr('href')
             recipes.push({
                 title,
                 url
