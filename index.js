@@ -1,7 +1,14 @@
 const PORT = 8000
+var requirejs = require('requirejs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const express = require('express');
+
+requirejs.config({
+    nodeRequire: require
+});
+
+requirejs([]);
 
 const app = express()
 
